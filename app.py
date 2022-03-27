@@ -1,10 +1,23 @@
+# Modules
 import pandas as pd
 import streamlit as st
+from PIL import Image
 import preprocessor,helper
 import plotly.express as px
 import matplotlib.pyplot as plt
 import seaborn as sns
 import plotly.figure_factory as ff
+
+img = Image.open('Olympic_rings_without_rims.svg.png')
+st.set_page_config(page_title='Olympics-124 Analysis', page_icon=img)
+
+hide_menu_style = """
+    <style>
+    #MainMenu {visibility: hidden; }
+    footer {visibility: hidden;}
+    </style>
+    """
+st.markdown(hide_menu_style, unsafe_allow_html=True)
 
 df = pd.read_csv('athlete_events.csv')
 region_df = pd .read_csv('noc_regions.csv')
@@ -15,9 +28,10 @@ st.sidebar.title("124 Years of Olympic Analysis")
 st.sidebar.image('https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Olympic_rings_without_rims.svg/300px-Olympic_rings_without_rims.svg.png')
 user_menu = st.sidebar.radio(
     'Select an Option',
-    ('Medal Tally', 'Overall Analysis', 'Country-wise Analysis', 'Athlete wise Analysis', 'Medals Showcase of 2020 Olympics', 'Athletes Showcase of 2020 Olympics', 'Indian Medalist of Tokyo 2020 Olympics')
+    ('Medal Tally', 'Overall Analysis', 'Country-wise Analysis', 'Athlete wise Analysis', 'Medals Showcase of 2020 Olympics', 'Athletes Showcase of 2020 Olympics', 'Indian Medalist of 2020 Olympics')
 )
 
+# Conditions
 if user_menu == 'Medal Tally':
     st.sidebar.header("Medal Tally")
     years, country = helper.country_year_list(df)
@@ -223,7 +237,7 @@ if user_menu == 'Athletes Showcase of 2020 Olympics':
     st.image('https://img.olympicchannel.com/images/image/private/f_auto//v1552235080/primary/jux5g5vrxv5fnglq93yj')
     st.table(athletes_showcase)
 
-if user_menu == 'Indian Medalist of Tokyo 2020 Olympics':
+if user_menu == 'Indian Medalist of 2020 Olympics':
     st.sidebar.image('https://img.olympicchannel.com/images/image/private/f_auto//v1552235080/primary/jux5g5vrxv5fnglq93yj')
     st.title("Indian Athletes with Medals")
     st.table(ind_athletes_df)
