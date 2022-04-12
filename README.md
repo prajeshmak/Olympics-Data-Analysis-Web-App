@@ -20,6 +20,6 @@ https://olympics124ymak-pra.herokuapp.com/
 
 <img width="960" alt="Screenshot_12" src="https://user-images.githubusercontent.com/103321168/162888806-aec20813-5e55-408b-b1ea-448ca78e94a0.png">
 
-<img width="960" alt="Screenshot_12" src="https://user-images.githubusercontent.com/103321168/162888806-aec20813-5e55-408b-b1ea-448ca78e94a0.png">
+<img width="960" alt="Screenshot_14" src="https://user-images.githubusercontent.com/103321168/162889066-0951f1ab-af1a-4b13-8b95-320ce1f9abf4.png">
 
 <img width="960" alt="Screenshot_15" src="https://user-images.githubusercontent.com/103321168/162888918-5598b1c7-c477-473b-9852-528d70dbce48.png">
